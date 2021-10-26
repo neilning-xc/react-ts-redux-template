@@ -8,7 +8,8 @@ import Footer from './components/footer';
 import './App.css';
 
 class App extends React.Component {
-    public render() {
+
+  render() {
         return (
             <div className="App">
                 <AddTodo />
