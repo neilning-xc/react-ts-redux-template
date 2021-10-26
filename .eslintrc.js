@@ -1,5 +1,10 @@
 module.exports = {
-  extends: 'erb',
+  parser: "@typescript-eslint/parser",
+  extends: [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/prettier",
+  ],
   rules: {
     // A temporary hack related to IDE not resolving correct package.json
     'import/no-extraneous-dependencies': 'off',
@@ -14,14 +19,8 @@ module.exports = {
     tsconfigRootDir: __dirname,
     createDefaultProgram: true,
   },
+  plugins: ["@typescript-eslint", "react-hooks", "prettier"],
   settings: {
-    'import/resolver': {
-      // See https://github.com/benmosher/eslint-plugin-import/issues/1396#issuecomment-575727774 for line below
-      node: {},
-      webpack: {
-        config: require.resolve('./.erb/configs/webpack.config.eslint.js'),
-      },
-    },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },

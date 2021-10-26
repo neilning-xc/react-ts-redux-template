@@ -8,13 +8,16 @@ interface IProps {
 }
 
 const Todo = ({ onClick, completed, text }: IProps) => (
-    <li 
+    <li
         onClick={ onClick }
         style={{
             textDecoration: completed ? 'line-through' : 'none'
           }}
         >
         { text }
+        <a>
+
+        </a>
     </li>
 )
 
