@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "build/dist",
+    "baseUrl": "./src",
     "module": "esnext",
     "target": "es5",
     "lib": ["es6", "dom"],
@@ -23,8 +22,8 @@
   "exclude": [
     "node_modules",
     "public",
-    "build",
-    "scripts",
-    "webpack"
+    "dist",
+    "webpack",
+    "__mocks__"
   ]
 }
