@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
 const config = require('./webpack.config.js');
 const webpack = require('webpack');
+const openBrowser = require('react-dev-utils/openBrowser');
 
 const devConfig = {
     mode: 'development',
@@ -17,9 +18,12 @@ const devConfig = {
         compress: true,
         hot: true,
         overlay: true,
-        open: true,
         publicPath: '/',
         port: '8080',
+        onListening: (devServer) => {
+          const {host, port} = devServer.options;
+          openBrowser(`http://${host}:${port}/`); // 避免重复打开窗口
+        },
         // 有需要代理的话 启用该配置
         // proxy: {
         //   "/api": { // 以 '/api' 开头的请求，会跳转到下面的 target 配置

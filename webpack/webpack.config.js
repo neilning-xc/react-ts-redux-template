@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -78,6 +79,7 @@ module.exports = {
               }
             }
         }),
-        // new CopyPlugin({patterns: [path.resolve(__dirname, '../public')]}),
+        new CopyPlugin({patterns: [path.resolve(__dirname, '../public')]}),
+        new WatchMissingNodeModulesPlugin(path.resolve('node_modules')),
     ]
 }
