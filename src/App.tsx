@@ -8,16 +8,15 @@ import Footer from './components/footer';
 import './App.css';
 
 class App extends React.Component {
-
   render() {
-        return (
-            <div className="App">
-                <AddTodo />
-                <VisibleTodoList />
-                <Footer />
-            </div>
-        );
-    }
+    return (
+      <div className="App">
+        <AddTodo />
+        <VisibleTodoList />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;

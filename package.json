@@ -7,8 +7,7 @@
     "test": "jest",
     "start": "npx webpack-dev-server --config ./webpack/webpack.dev.js",
     "build": "npx webpack --config ./webpack/webpack.prod.js --display-used-exports",
-    "lint": "cross-env NODE_ENV=development eslint src --cache --ext .js,.jsx,.ts,.tsx",
-    "prettier": "prettier"
+    "lint": "cross-env NODE_ENV=development eslint src --cache --ext .js,.jsx,.ts,.tsx"
   },
   "author": "",
   "license": "ISC",
@@ -72,7 +71,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jest": "24",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "3",
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
@@ -80,7 +79,7 @@
     "file-loader": "^5.0.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^7.0.4",
+    "husky": "4",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^6.0.0",
     "jest": "^27.3.1",
@@ -121,7 +120,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "cross-env NODE_ENV=development eslint --cache"
+      "yarn lint --fix"
     ],
     "*.{css,scss}": [
       "prettier --ignore-path .eslintignore --write"

@@ -12,8 +12,12 @@ const store = createStore(rootReducer);
 
 describe('App', () => {
   it('should render', () => {
-    expect(render(<Provider store={ store }>
-      <App />
-  </Provider>)).toBeTruthy();
+    expect(
+      render(
+        <Provider store={store}>
+          <App />
+        </Provider>,
+      ),
+    ).toBeTruthy();
   });
 });
