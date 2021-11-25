@@ -1,22 +1,12 @@
-import * as React from 'react';
+import { AppProvider } from '@/providers/app';
+import { AppRoutes } from '@/routes';
 
-import AddTodo from './container/addTodo';
-import VisibleTodoList from './container/visibleTodoList';
-import Footer from './components/footer';
-
-// import logo from './../logo.svg';
-import './App.css';
-
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <AddTodo />
-        <VisibleTodoList />
-        <Footer />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
+  );
 }
 
 export default App;
