@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { toggleTodo } from '../../actions';
+import { toggleTodo } from '../../store/actions';
 import TodoList from '../../components/todoList';
-import { Todo } from '../../types';
-import { IStoreState, VisibilityFilters } from '../../types';
+import { Todo } from '../../store/types';
+import { IStoreState, VisibilityFilters } from '../../store/types';
 
 const getVisibleTodos = (todos: Todo[], filter: VisibilityFilters) => {
   switch (filter) {

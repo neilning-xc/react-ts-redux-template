@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { setVisibilityFilter } from '../../actions';
+import { setVisibilityFilter } from '../../store/actions';
 import Link from '../../components/link';
-import { IStoreState, VisibilityFilters } from '../../types';
+import { IStoreState, VisibilityFilters } from '../../store/types';
 import { ReactNode } from 'react';
 
 interface IProps {

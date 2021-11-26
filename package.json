@@ -51,6 +51,7 @@
     "@types/react": "^17.0.30",
     "@types/react-dom": "^17.0.9",
     "@types/react-redux": "^7.1.19",
+    "@types/redux-logger": "^3.0.9",
     "@typescript-eslint/eslint-plugin": "4",
     "@typescript-eslint/parser": "4",
     "autoprefixer": "^9.7.4",
@@ -110,7 +111,10 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
-    "redux": "^4.1.1"
+    "react-router-dom": "^6.0.2",
+    "redux": "^4.1.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.0"
   },
   "husky": {
     "hooks": {
