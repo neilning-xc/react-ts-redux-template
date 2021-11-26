@@ -8,8 +8,8 @@ type HeadProps = {
 export const Head = ({ title = '', description = '' }: HeadProps = {}) => {
   return (
     <Helmet
-      title={title ? `${title} | React typescript redux project template` : undefined}
-      defaultTitle="React typescript redux project template"
+      title={title ? `${title} | <%= Project$name %>` : undefined}
+      defaultTitle="<%= Project$name %>"
     >
       <meta name="description" content={description} />
     </Helmet>

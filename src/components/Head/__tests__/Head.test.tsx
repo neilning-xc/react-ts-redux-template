@@ -4,7 +4,7 @@ import { Head } from '../Head';
 
 test('should add proper page title and meta description', async () => {
   const title = 'Hello World';
-  const titleSuffix = ' | React typescript redux project template';
+  const titleSuffix = ' | <%= Project$name %>';
   const description = 'This is a description';
 
   render(<Head title={title} description={description} />);
