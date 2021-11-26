@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { addTodo } from '../../store/actions';
+import { addTodo } from '../../actions';
 
 const AddTodo = ({ dispatch }: { dispatch: Dispatch }) => {
   let input: HTMLInputElement | null;

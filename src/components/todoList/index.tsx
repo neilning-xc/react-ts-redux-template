@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { IToggleTodoAction } from '../../store/actions';
-import { Todo as TodoClass } from '../../store/types';
+import { IToggleTodoAction } from '../../actions';
+import { Todo as TodoClass } from '../../types';
 import Todo from '../todo';
 
 interface IProps {
