@@ -210,4 +210,78 @@ describe('smoke', () => {
       name: updatedDiscussion.title,
     }).should('not.exist');
   });
+
+  it('visit protected url without login', () => {
+    cy.visit('http://localhost:3000/app');
+    cy.url().should('include', '/auth/login');   
+  });
+
+  it('visit protected url after login', () => {
+    const user = userGenerator();
+    // registration:
+    cy.visit('http://localhost:3000/auth/register');
+
+    cy.findByRole('textbox', {
+      name: /first name/i,
+    }).type(user.firstName);
+    cy.findByRole('textbox', {
+      name: /last name/i,
+    }).type(user.lastName);
+    cy.findByRole('textbox', {
+      name: /email address/i,
+    }).type(user.email);
+    cy.findByLabelText(/password/i).type(user.password);
+
+    cy.findByRole('textbox', {
+      name: /team name/i,
+    }).type(user.teamName);
+
+    cy.findByRole('button', {
+      name: /register/i,
+    }).click();
+
+    cy.findByRole('heading', {
+      name: `Welcome ${user.firstName} ${user.lastName}`,
+    }).should('exist');
+
+    cy.visit('http://localhost:3000/app');
+    cy.url().should('include', '/app');   
+  });
+
+  it('visit protected url after logout', () => {
+    const user = userGenerator();
+    // registration:
+    cy.visit('http://localhost:3000/auth/register');
+
+    cy.findByRole('textbox', {
+      name: /first name/i,
+    }).type(user.firstName);
+    cy.findByRole('textbox', {
+      name: /last name/i,
+    }).type(user.lastName);
+    cy.findByRole('textbox', {
+      name: /email address/i,
+    }).type(user.email);
+    cy.findByLabelText(/password/i).type(user.password);
+
+    cy.findByRole('textbox', {
+      name: /team name/i,
+    }).type(user.teamName);
+
+    cy.findByRole('button', {
+      name: /register/i,
+    }).click();
+
+    // log out:
+    cy.findByRole('button', {
+      name: /open user menu/i,
+    }).click();
+
+    cy.findByRole('menuitem', {
+      name: /sign out/i,
+    }).click();
+
+    cy.visit('http://localhost:3000/app');
+    cy.url().should('include', '/auth/login');
+  });
 });
